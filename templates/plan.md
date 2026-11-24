@@ -2,7 +2,7 @@
 
 - Research started: `<ISO timestamp>`
 - Last verified: `<ISO timestamp>`
-- Booking status: **Research only — not booked**
+- Status: **Research only. Agents never book or pay.**
 
 ## Interpretation and assumptions
 
@@ -51,14 +51,12 @@
 
 ## Questions for the traveller
 
-- `<only decisions needed to shortlist or book>`
+- `<only decisions needed to shortlist>`
 
-## Booking approval (complete only when ready)
+## Handoff to the traveller
 
 - Selected option: `<option>`
-- Exact final total and currency: `<amount>`
-- Seller/operator for each ticket: `<sellers>`
-- Traveller details to submit: `<non-secret summary>`
-- Material risks and fare conditions: `<summary>`
-- Explicit user approval received: `no`
-- Booking confirmation/reference: `<only after actual purchase>`
+- Booking link per leg (operator's own site): `<URLs>`
+- Total and currency at the operator, fees known: `<amount>`
+- Baggage, refund/change conditions, missed-connection cost: `<summary>`
+- Still unverified / re-check at checkout: `<list>`

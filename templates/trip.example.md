@@ -46,9 +46,9 @@ Machine-readable settings for the scripts live in `local/config.json` (copy of `
 - Residency/student/youth/senior/disability status that may unlock fares or refunds: `<status, or none>`
 - Official scheme(s) to check: `<name/URL, or none>` (record eligibility as an assumption until read in the official rules)
 
-## Booking status
+## Status
 
-Research only until the user explicitly approves an exact itinerary and final total.
+Research only. The agent hands over a verified shortlist; the traveller books.
 
 ## Open questions
 
