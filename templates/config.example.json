@@ -1,0 +1,66 @@
+{
+  "_comment": "Copy to local/config.json. Machine-readable search settings for scripts/combine_legs.py. Fictional example: Berlin -> Faro. Node codes are whatever your legs files use (IATA codes or labels you chose in --from-code/--to-code).",
+  "currency": "EUR",
+  "origin": ["BER", "BER-BUS"],
+  "destination": ["FAO"],
+  "outbound_window": ["2026-12-17", "2026-12-23"],
+  "return_window": ["2027-01-04", "2027-01-09"],
+
+  "max_legs": 2,
+  "max_total": 300,
+  "budget_scope": "round_trip",
+  "_preferences": "The next three are personal taste, off by default: ask the traveller. no_overnight=true drops journeys that end on another calendar day; min_start_hour=5 drops departures before 05:00; max_layover_hours caps waits between legs.",
+  "no_overnight": false,
+  "min_start_hour": 0,
+  "max_layover_hours": 24,
+  "thin_margin_min": 30,
+
+  "buffers_min": {
+    "_comment": "Minimum minutes between two SEPARATE tickets. Defaults are in scripts/combine_legs.py; override here.",
+    "bus>flight": 150,
+    "flight>flight": 180,
+    "flight>bus": 120
+  },
+
+  "equivalent_nodes": [
+    ["MAD-BUS", "MAD", 30]
+  ],
+
+  "last_mile": {
+    "_comment": "Optional per-gateway rule for the final surface leg. Outbound: latest arrival; return: earliest departure. Date and weekday overrides win over the default. A date with no entry and no default is treated as infeasible.",
+    "outbound": {
+      "FAO": {
+        "latest_arrival": "18:00",
+        "weekday_latest_arrival": {"Sun": "14:30"},
+        "date_latest_arrival": {"2026-12-25": "12:00"}
+      }
+    },
+    "return": {
+      "FAO": {
+        "earliest_departure": "10:00",
+        "date_earliest_departure": {"2027-01-06": "11:00"}
+      }
+    }
+  },
+  "no_constraint_nodes": [],
+
+  "discounts": [
+    {
+      "name": "Example resident discount",
+      "percent": 50,
+      "cap": 100,
+      "modes": ["flight"],
+      "between": [["FAO"], ["MAD", "LIS", "OPO"]],
+      "valid_from": "2026-12-01",
+      "valid_to": "2027-01-10"
+    }
+  ],
+
+  "stopovers": {
+    "_comment": "Optional free overnight stays (e.g. at a home or relative's place). Remove this block to disable.",
+    "nodes": ["LIS"],
+    "min_nights": 1,
+    "max_nights": 5,
+    "end_within_window": true
+  }
+}

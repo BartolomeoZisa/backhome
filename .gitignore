@@ -1,0 +1,14 @@
+# Private traveller data, trip requirements, research, and browser state
+/local/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+
+# Local tooling
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+.DS_Store

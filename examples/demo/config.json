@@ -1,0 +1,70 @@
+{
+ "_comment": "SYNTHETIC demo: Berlin -> Faro. Not real prices or schedules.",
+ "currency": "EUR",
+ "origin": [
+  "BER",
+  "BER-BUS"
+ ],
+ "destination": [
+  "FAO"
+ ],
+ "outbound_window": [
+  "2026-12-17",
+  "2026-12-23"
+ ],
+ "return_window": [
+  "2027-01-04",
+  "2027-01-09"
+ ],
+ "max_legs": 2,
+ "max_total": 300,
+ "budget_scope": "round_trip",
+ "no_overnight": true,
+ "min_start_hour": 5,
+ "last_mile": {
+  "outbound": {
+   "FAO": {
+    "latest_arrival": "18:00",
+    "weekday_latest_arrival": {
+     "Sun": "14:30"
+    }
+   }
+  },
+  "return": {
+   "FAO": {
+    "earliest_departure": "10:00",
+    "date_earliest_departure": {
+     "2027-01-06": "13:00"
+    }
+   }
+  }
+ },
+ "discounts": [
+  {
+   "name": "Example resident refund",
+   "percent": 50,
+   "cap": 100,
+   "modes": [
+    "flight"
+   ],
+   "between": [
+    [
+     "FAO"
+    ],
+    [
+     "LIS",
+     "OPO"
+    ]
+   ],
+   "valid_from": "2026-12-01",
+   "valid_to": "2027-01-10"
+  }
+ ],
+ "stopovers": {
+  "nodes": [
+   "LIS"
+  ],
+  "min_nights": 1,
+  "max_nights": 3
+ }
+}
