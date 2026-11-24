@@ -1,10 +1,19 @@
 # Backhome
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg) ![Dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen.svg) ![Never pays without approval](https://img.shields.io/badge/payments-only%20with%20your%20approval-orange.svg)
+
 ### The cheapest flight is not the cheapest way home.
 
 Flight search stops at the airport. **Home doesn't.** The €19 fare lands at 21:40 and the last bus left at 18:40. The "protected" ticket was actually two tickets. The bus feed went quiet in January and you read that as *no service*.
 
-> **Why this exists.** It started with a trip home that was about to cost **~€500**, after checking Rome2Rio, Skyscanner and Google Flights and still comparing dates by hand for days. Pointed at the whole journey, an agent found a plan of **around €250 including the local bus and train** (coach to a budget airport, a low-cost flight, a cheap last leg). Prices were snapshots at research time, one fare still needed an operator check, bags were extra, and nothing was bought without a yes. That workflow is this repo.
+> **Why this exists.** A trip home was about to cost **~€500**, after checking Rome2Rio, Skyscanner and Google Flights and still comparing dates by hand for days. Pointed at the *whole* journey, an agent found a much cheaper plan. That workflow is this repo.
+
+| | The usual search sites | An agent working the whole journey |
+| --- | --- | --- |
+| Total I was about to pay | **~€500** | **around €250**, including the local bus and train |
+| What it took | days of comparing dates by hand | the agent did the comparing; I answered questions |
+| How the saving came about | | coach to a budget airport + low-cost flights + a cheap last leg, each checked against the last bus |
+| Catch | | separate tickets (no protection), prices were snapshots, one fare still needed an operator check, bags extra, **not booked until I say yes** |
 
 Backhome is a workspace for an AI agent that plans the **whole door-to-door journey**, checks the last bus on the exact day, keeps score honestly, and **never pays without your explicit yes**.
 
@@ -45,8 +54,8 @@ Cheapest demo round trip: a €22 coach plus a €64 budget flight out, the same
 ## Quick start
 
 ```sh
-git clone <this repo> && cd backhome
-python3 scripts/init_local.py     # creates your private, git-ignored local/ workspace
+git clone https://github.com/BartolomeoZisa/backhome && cd backhome && python3 scripts/init_local.py
+# init_local.py creates your private, git-ignored local/ workspace; nothing to install
 ```
 
 1. Open the folder in an agent that reads `AGENTS.md` (Claude Code, Codex, Cursor… anything with shell and web access).
