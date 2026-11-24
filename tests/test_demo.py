@@ -36,6 +36,12 @@ class DemoTests(unittest.TestCase):
         self.assertEqual(stop["total"], 130.0)         # 95 + 70 halved by the assumed refund
         self.assertTrue(stop["discounted"])
 
+    def test_sample_handoff_matches_the_combiner(self):
+        text = (DEMO / "handoff.md").read_text()
+        total = self.data["pairs"][0]["total"]
+        self.assertIn(f"total EUR {total:.0f}", text)
+        self.assertIn("22 + 64 + 72 + 25 = **183**", text)   # the four leg prices add up
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -26,7 +26,7 @@ No dependencies. Your trip stays in `local/`, which git ignores.
 - **Flags** separate tickets, thin connections, assumed discounts and unverified prices. Missing data is never "no service".
 - **Never books, pays or bypasses a CAPTCHA.** You buy.
 
-Try the combiner on made-up data: `python3 scripts/combine_legs.py --config examples/demo/config.json --legs examples/demo/legs.jsonl --out /tmp/demo`
+See the kind of shortlist you get: [`examples/demo/handoff.md`](examples/demo/handoff.md). Try the combiner on made-up data: `python3 scripts/combine_legs.py --config examples/demo/config.json --legs examples/demo/legs.jsonl --out /tmp/demo`
 
 ## Contribute
 
